@@ -49,3 +49,8 @@ vim.lsp.enable({
     'lua_ls',
     'clangd'
 })
+require("oil").setup({  
+    view_options = {
+        show_hidden = true,
+    }
+})
