@@ -47,10 +47,17 @@ end)
 
 vim.lsp.enable({
     'lua_ls',
+    'ts_ls',
     'clangd'
 })
-require("oil").setup({  
+require("oil").setup({
     view_options = {
         show_hidden = true,
     }
 })
+-- keymaps for tmux-sessionizer script
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+vim.keymap.set("n", "<M-h>", "<cmd>silent !tmux neww tmux-sessionizer -s 0<CR>")
+vim.keymap.set("n", "<M-t>", "<cmd>silent !tmux neww tmux-sessionizer -s 1<CR>")
+vim.keymap.set("n", "<M-n>", "<cmd>silent !tmux neww tmux-sessionizer -s 2<CR>")
+vim.keymap.set("n", "<M-s>", "<cmd>silent !tmux neww tmux-sessionizer -s 3<CR>")
